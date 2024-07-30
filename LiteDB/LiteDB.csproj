@@ -7,20 +7,20 @@
     <VersionPrefix>5.0.22</VersionPrefix>
     <PackageVersion>5.0.22</PackageVersion>
     <Authors>Maurício David</Authors>
-    <Product>LiteDB</Product>
+    <Product>GoodFillingLiteDB</Product>
     <Description>LiteDB - A lightweight embedded .NET NoSQL document store in a single datafile</Description>
     <Copyright>MIT</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Title>LiteDB</Title>
-    <PackageId>LiteDB</PackageId>
+    <Title>GoodFillingLiteDB</Title>
+    <PackageId>GoodFillingLiteDB</PackageId>
     <PackageTags>database nosql embedded</PackageTags>
     <PackageIcon>icon_64x64.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://www.litedb.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mbdavid/LiteDB</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <RootNamespace>LiteDB</RootNamespace>
-    <AssemblyName>LiteDB</AssemblyName>
+    <RootNamespace>GoodFillingLiteDB</RootNamespace>
+    <AssemblyName>GoodFillingLiteDB</AssemblyName>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.3' ">1.6.1</NetStandardImplicitPackageVersion>
     <NoWarn>1701;1702;1705;1591;0618</NoWarn>
