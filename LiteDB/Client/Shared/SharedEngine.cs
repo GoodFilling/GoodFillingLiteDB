@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-#if NETFRAMEWORK
+#if NETFRAMEWORK || NET8_0_OR_GREATER
 using System.Security.AccessControl;
 using System.Security.Principal;
 #endif
@@ -33,6 +33,14 @@ namespace LiteDB
                 securitySettings.AddAccessRule(allowEveryoneRule);
 
                 _mutex = new Mutex(false, "Global\\" + name + ".Mutex", out _, securitySettings);
+#elif NET8_0_OR_GREATER
+               var allowEveryoneRule = new MutexAccessRule(new SecurityIdentifier(WellKnownSidType.WorldSid, null),
+                           MutexRights.FullControl, AccessControlType.Allow);
+
+                var securitySettings = new MutexSecurity();
+                securitySettings.AddAccessRule(allowEveryoneRule);
+
+                _mutex = MutexAcl.Create(false, "Global\\" + name + ".Mutex", out _, securitySettings); 
 #else
                 _mutex = new Mutex(false, "Global\\" + name + ".Mutex");
 #endif
